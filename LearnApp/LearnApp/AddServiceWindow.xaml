@@ -1,0 +1,38 @@
+﻿<Window x:Class="LearnApp.AddServiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LearnApp"
+        mc:Ignorable="d"
+        Title="AddServiceWindow" Height="450" Width="650" Icon="Resources/school_logo.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="120"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.ColumnSpan="2" Background="#E7FABF"></Border>
+        <TextBlock  Grid.ColumnSpan="2" Style="{StaticResource StandartTextBlock}" Text="Добавление услуги"></TextBlock>
+        <TextBlock Grid.Row="1" Style="{StaticResource StandartTextBlock}" Text="Наименование"></TextBlock>
+        <TextBox Name="TextBoxName" Style="{StaticResource StandartTextBox}" Grid.Row="1" Grid.Column="1" Margin="5" ></TextBox>
+        <TextBlock Grid.Row="2" Style="{StaticResource StandartTextBlock}" Text="Длительность"></TextBlock>
+        <TextBox Name="TextBoxDuration" Style="{StaticResource StandartTextBox}" Grid.Row="2" Grid.Column="1" Margin="5" ></TextBox>
+        <TextBlock Grid.Row="3" Style="{StaticResource StandartTextBlock}" Text="Стоимость"></TextBlock>
+        <TextBox Name="TextBoxCost" Style="{StaticResource StandartTextBox}" Grid.Row="3" Grid.Column="1" Margin="5" ></TextBox>
+        <TextBlock Grid.Row="4" Style="{StaticResource StandartTextBlock}" Text="Скидка"></TextBlock>
+        <TextBox Name="TextBoxDiscount" Style="{StaticResource StandartTextBox}" Grid.Row="4" Grid.Column="1" Margin="5" ></TextBox>
+        <Button x:Name="AddPhotoBtn" Style="{StaticResource StandartButton}" Content="Выбор фото" Width="300" Grid.Row="5"  Margin="5"  Click="AddPhotoBtn_Click"></Button>
+        <Image x:Name="ImageChoosedPhoto" Margin="5" Grid.Row="5" Grid.Column="1"></Image>
+        <Button x:Name="AddServiceBtn" Style="{StaticResource StandartButton}" Content="Добавить услугу" Width="300" Grid.Row="6" Grid.ColumnSpan="2"  Margin="5" Click="AddServiceBtn_Click"></Button>
+
+    </Grid>
+</Window>

@@ -1,0 +1,62 @@
+﻿<Window x:Class="LearnApp.ChangeServiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LearnApp"
+        mc:Ignorable="d"
+        Title="ChangeServiceWindow" Height="600" Width="650" Icon="Resources/school_logo.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="120"></RowDefinition>
+            <RowDefinition Height="130"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.ColumnSpan="2" Background="#E7FABF"></Border>
+        <TextBlock  Grid.ColumnSpan="2" Style="{StaticResource StandartTextBlock}" Text="Изменение услуги"></TextBlock>
+        <TextBlock Grid.Row="1" Style="{StaticResource StandartTextBlock}" Text="Id"></TextBlock>
+        <TextBox IsEnabled="False" Name="TextBoxId" Style="{StaticResource StandartTextBox}" Grid.Row="1" Grid.Column="1" Margin="5" ></TextBox>
+        <TextBlock Grid.Row="2" Style="{StaticResource StandartTextBlock}" Text="Наименование"></TextBlock>
+        <TextBox Name="TextBoxName" Style="{StaticResource StandartTextBox}" Grid.Row="2" Grid.Column="1" Margin="5" ></TextBox>
+        <TextBlock Grid.Row="3" Style="{StaticResource StandartTextBlock}" Text="Длительность"></TextBlock>
+        <TextBox Name="TextBoxDuration" Style="{StaticResource StandartTextBox}" Grid.Row="3" Grid.Column="1" Margin="5" ></TextBox>
+        <TextBlock Grid.Row="4" Style="{StaticResource StandartTextBlock}" Text="Стоимость"></TextBlock>
+        <TextBox Name="TextBoxCost" Style="{StaticResource StandartTextBox}" Grid.Row="4" Grid.Column="1" Margin="5" ></TextBox>
+        <TextBlock Grid.Row="5" Style="{StaticResource StandartTextBlock}" Text="Скидка"></TextBlock>
+        <TextBox Name="TextBoxDiscount" Style="{StaticResource StandartTextBox}" Grid.Row="5" Grid.Column="1" Margin="5" ></TextBox>
+        <Button Style="{StaticResource StandartButton}" Content="Выбор фото" Width="300" Grid.Row="7"  Margin="5"   Click="ClickChoosePhoto"></Button>
+        <Image x:Name="ImageChoosedPhoto" Margin="5" Grid.Row="6" Grid.Column="1"></Image>
+        <Button Style="{StaticResource StandartButton}" Content="Добавить фото" Width="300" Grid.Row="6"  Margin="5"  Click="ClickAddPhoto"></Button>
+        <ListView Name="ListViewPhotosCurrent" Grid.Row="7" Grid.Column="1" Margin="3" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"></StackPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                            <Image Height="80" Source="{Binding Image}"></Image>
+                            <Button   FontSize="16" Content="Удалить" Style="{StaticResource StandartButton}" Margin="5,0,0,0" Click="ClickRemove"></Button>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Style="{StaticResource StandartButton}" Content="Изменить услугу" Width="300" Grid.Row="8" Grid.ColumnSpan="2"  Margin="5"  Click="ClickChangeService"></Button>
+
+
+
+    </Grid>
+</Window>
